@@ -1,0 +1,125 @@
+﻿<UserControl x:Class="Esca.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Esca"
+        mc:Ignorable="d"
+        Height="703" Width="1024">
+    <Grid HorizontalAlignment="Center" Height="703" VerticalAlignment="Top" Width="1024">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100" />
+            <RowDefinition Height="603" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Height="100" Width="600" HorizontalAlignment="Right">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="100"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="MenuButton" Grid.Column="0" Grid.Row="0" Height="100" Width="100" Background="White" Click="Menu_Click">
+                <StackPanel>
+                    <Image Source="/pictures/top-menu/menu.png" Stretch="Fill" Height="50" Width="50"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="13" Margin="0,1,0,0">MENU</TextBlock>
+                </StackPanel>
+            </Button>
+            <Button Name="WaiterButton" Grid.Column="1" Grid.Row="0" Height="100" Width="100" Background="White" Click="Waiter_Click">
+                <StackPanel>
+                    <Image Source="/pictures/top-menu/bell.png" Stretch="Fill" Height="50" Width="50"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="13" Margin="0,1,0,0">WAITER</TextBlock>
+                    <Popup Name="WaiterAlertPopup" Placement="Absolute" HorizontalOffset="450" VerticalOffset="400">
+                        <Border Background="Black" Margin="2">
+                            <Grid Background="White" Width="500" Height="180">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Border Grid.Row="0" VerticalAlignment="Top" Height="45" Padding="5" Background="Black" Margin="0,0,0,50.5">
+                                    <Label Content="Waiter Notified" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="20" Foreground="White" Grid.Row="1"/>
+                                </Border>
+                                <ToggleButton Name="WaiterClose" Content="&#128473;" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Width="45" Height="45" FontSize="25" Background="Maroon" Foreground="White" BorderThickness="0" Grid.Row="0" Click="Waiter_Popup_Exit_Click" MouseLeave="Waiter_Close_Btn_MouseLeave"/>
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Meiryo UI" FontSize="15" Foreground="Black" Grid.Row="1" Width="450" TextWrapping="Wrap" Text="The waiter has been notified and will arrive shortly!"/>
+                            </Grid>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+            </Button>
+            <Button Name="PayButton" Grid.Column="2" Grid.Row="0" Height="100" Width="100" Background="White" Click="Pay_Click">
+                <StackPanel>
+                    <Image Source="/pictures/top-menu/pay.png" Stretch="Fill" Height="50" Width="50" RenderTransformOrigin="10.525,7.164"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="13" Margin="0,1,0,0">PAY</TextBlock>
+                    <Popup Name="PayPopup" Placement="Absolute" HorizontalOffset="390" VerticalOffset="400">
+                        <Border Background="Black" Margin="2">
+                            <Grid Background="White" Width="600" Height="220">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+
+                                <Border Grid.Row="0" VerticalAlignment="Top" Height="45" Padding="5" Background="Black" Margin="0,0,0,50.5">
+                                    <Label Content="Ready To Pay" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="20" Foreground="White" Grid.Row="1"/>
+                                </Border>
+                                <ToggleButton Name="PayClose" Content="&#128473;" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Width="45" Height="45" FontSize="25" Background="Maroon" Foreground="White" BorderThickness="0" Grid.Row="0" Click="Pay_Popup_Exit_Click" MouseLeave="Pay_Close_Btn_MouseLeave" />
+                                <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" FontFamily="Meiryo UI" FontSize="15" Foreground="Black" Grid.Row="1" Width="550" TextWrapping="Wrap" Text="The waiter has been notified and will arrive shortly to take your payment.&#10;&#10; Order history can be seen by selecting HISTORY in the main toolbar."/>
+                            </Grid>
+                        </Border>
+                    </Popup>
+                </StackPanel>
+            </Button>
+            <Button Name="CartButton" Grid.Column="3" Grid.Row="0" Height="100" Width="100" Background="White" Click="Cart_Click">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.75*"/>
+                        <ColumnDefinition Width="0.25*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Image Source="/pictures/top-menu/shopping-cart.png" Stretch="Fill" Height="50" Width="50"/>
+                        <TextBlock HorizontalAlignment="Center" FontSize="13" Margin="0,1,0,0">CART</TextBlock>
+                    </StackPanel>
+                    <TextBlock Name="CartCounter" Text="0" Grid.Column="1"  HorizontalAlignment="Center" FontSize="25" Margin="0,-10,0,0" Foreground="Maroon" FontWeight="Bold"/>
+                </Grid>
+            </Button>
+            <Button Name="HistoryButton" Grid.Column="4" Grid.Row="0" Height="100" Width="100" Background="White" Click="History_Click">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.75*"/>
+                        <ColumnDefinition Width="0.25*"/>
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Column="0">
+                        <Image Source="/pictures/top-menu/clock.png" Stretch="Fill" Height="50" Width="50"/>
+                        <TextBlock HorizontalAlignment="Center" FontSize="13" Margin="0,1,0,0">HISTORY</TextBlock>
+                    </StackPanel>
+                    <TextBlock Grid.Column="1" Name="HistoryCounter" Text="0" HorizontalAlignment="Center" FontSize="25" Margin="0,-10,0,0" Foreground="Maroon" FontWeight="Bold"/>
+                </Grid>
+            </Button>
+            <Button Name="HelpButton" Grid.Column="5" Grid.Row="0" Height="100" Width="100" Background="White" Click="Help_Click">
+                <StackPanel>
+                    <Image Source="/pictures/top-menu/question-mark.png" Stretch="Fill" Height="50" Width="50"/>
+                    <TextBlock HorizontalAlignment="Center" FontSize="13" Margin="0,1,0,0">HELP</TextBlock>
+                    <Popup Name="HelpPopup" HorizontalOffset="-68" VerticalOffset="16">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="75"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" VerticalAlignment="Top" Height="75" Padding="5" Background="Black" >
+                                <Label Content="System Help" HorizontalAlignment="Center" VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="40" Foreground="White" Grid.Row="1"/>
+                            </Border>
+                            <ToggleButton Name="HelpClose" Content="&#128473;" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" Width="75" Height="75" FontSize="40" Background="Maroon" Foreground="White" BorderThickness="0" Grid.Row="0" Click="HelpClose_Exit_Click" MouseLeave="HelpClose_MouseLeave"/>
+                            <local:SystemHelp Width="823" Height="491" Grid.Row="1"/>
+                        </Grid>
+                    </Popup>
+                </StackPanel>
+            </Button>
+        </Grid>
+        <Grid Name="pageUserControls" Grid.Row="1" Height="603" Width="1024"/>
+        <Grid Name="overlayUserControls" Grid.Row="0" Grid.RowSpan="2" Height="703" Width="1024"/>
+        <Label Content="TABLE 10" HorizontalAlignment="Left" Margin="218,32,0,0" VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="24" FontWeight="Bold" BorderBrush="Gray"/>
+        <Label Content="ESCA" HorizontalAlignment="Left" Margin="18,-11,0,0" VerticalAlignment="Top" FontFamily="Gabriola" FontSize="75" FontWeight="Bold" Foreground="Maroon" Grid.RowSpan="2"/>
+    </Grid>
+</UserControl>

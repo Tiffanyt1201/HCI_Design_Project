@@ -1,0 +1,104 @@
+﻿<UserControl x:Class="Esca.Appetizers"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Esca"
+             mc:Ignorable="d" 
+             d:DesignHeight="528" d:DesignWidth="1024">
+    <Grid x:Name="container">
+        <ScrollViewer VerticalScrollBarVisibility="Visible">
+        <StackPanel>
+            <ListBox Name="appetizerFavouriteList" SelectionChanged="appetizerList_SelectionChanged" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,0,0,0">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="115"/>
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Height="115">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="500"/>
+                                    <ColumnDefinition Width="324"/>
+                                    <ColumnDefinition Width="75"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.ColumnSpan="4" Background="Maroon" Opacity="0.38"></Border>
+                                <Border Grid.Column="1" Grid.RowSpan="1" BorderBrush="Black" BorderThickness="1,0,1,0"></Border>
+                                    <Button Tag="{Binding Id}" Grid.Column="0" Grid.Row="0" Content="MORE &#10; INFO" Height="115" Width="100" Background="Maroon" Foreground="White" FontWeight="Bold" FontSize="16" BorderBrush="Maroon" Click="More_Info_Click2"/>
+                                    <Button Tag="{Binding Id}" Grid.Column="3" Grid.Row="0" Content="★" Height="115" Width="100" Background="Black" Foreground="Maroon" FontSize="30" BorderBrush="Black" Click="Unfavourite_Click"/>
+                                    <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="10,10,50,67" Content="{Binding Name}" FontSize="20" FontWeight="Bold" FontFamily="Meiryo UI"/>
+                                <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Content="{Binding Price}" ContentStringFormat="${0}" FontSize="18" Margin="10,10,10,10" FontFamily="Meiryo"/>
+                                <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="10,53,10,10">
+                                    <TextBlock Text="{Binding ShortDescription}" TextWrapping="Wrap"></TextBlock>
+                                </Label>
+                                <Border Grid.ColumnSpan="4" Grid.Row="0" BorderBrush="Black" BorderThickness="0,0,0,2.5"></Border>
+                                <Image Grid.Column="2" Grid.Row="0" Stretch="UniformToFill" StretchDirection="Both" RenderTransformOrigin="0.505,0.883" Source="{Binding PictureSource}" Margin="0,0,0,3"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+                <ListBox Name="appetizerList" SelectionChanged="appetizerList_SelectionChanged" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="0,0,0,20">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="115" />
+                            </Grid.RowDefinitions>
+                            <Grid Grid.Row="0" Height="115">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="500"/>
+                                    <ColumnDefinition Width="324"/>
+                                    <ColumnDefinition Width="75"/>
+                                </Grid.ColumnDefinitions>
+                                <Border Grid.Column="1" Grid.RowSpan="1" BorderBrush="Black" BorderThickness="1,0,1,0"></Border>
+                                    <Button Tag="{Binding Id}" Grid.Column="0" Grid.Row="0" Content="MORE &#10; INFO" Height="115" Width="100" Background="Maroon" Foreground="White" FontWeight="Bold" FontSize="16" BorderBrush="Maroon" IsEnabled="True" Click="More_Info_Click1"/>
+                                    <Button Tag="{Binding Id}" Grid.Column="3" Grid.Row="0" Content="☆" Height="115" Width="100" Background="Black" Foreground="White" FontSize="30" BorderBrush="Black" Click="Favourite_Click"/>
+                                    <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Left" Margin="10,10,50,67" Content="{Binding Name}" FontSize="20" FontWeight="Bold" FontFamily="Meiryo UI"/>
+                                <Label Grid.Column="1" Grid.Row="0" HorizontalAlignment="Right" Content="{Binding Price}" ContentStringFormat="${0}" FontSize="18" Margin="10,10,10,10" FontFamily="Meiryo"/>
+                                <Label Grid.Column="1" Grid.Row="0" FontSize="16" Margin="10,53,10,10">
+                                    <TextBlock Text="{Binding ShortDescription}" TextWrapping="Wrap"></TextBlock>
+                                </Label>
+                                <Border Grid.ColumnSpan="4" Grid.Row="0" BorderBrush="Black" BorderThickness="0,0,0,2.5"></Border>
+                                <Image Grid.Column="2" Grid.Row="0" Stretch="UniformToFill" StretchDirection="Both" RenderTransformOrigin="0.505,0.883" Source="{Binding PictureSource}" Margin="0,0,0,3"/>
+                            </Grid>
+                        </Grid>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+            
+        </StackPanel>
+    </ScrollViewer>
+        <Popup Name="dishPopup" HorizontalOffset="35" VerticalOffset="480">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" VerticalAlignment="Top" Height="50" Padding="5" Background="Black" >
+                    <Label Name="dishName" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Meiryo UI" FontSize="20" Foreground="White" FontWeight="Bold"/>
+                </Border>
+                <Button Name="MoreInfoClose" Content="&#128473;" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="50" FontSize="20" Background="Maroon" Foreground="White" BorderThickness="0" Grid.Row="0"/>
+                <local:MoreInfo x:Name="moreDishInfo" Width="950" Height="418" Grid.Row="1"/>
+            </Grid>
+        </Popup>
+        <Popup Name="atcPopup" HorizontalOffset="100" VerticalOffset="470">
+            <Grid>
+                <Grid.BindingGroup>
+                    <BindingGroup/>
+                </Grid.BindingGroup>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Border Grid.Row="0" VerticalAlignment="Top" Height="50" Padding="5" Background="Black" >
+                    <Label Name="atcDishName" HorizontalAlignment="Left" VerticalAlignment="Center" FontFamily="Meiryo UI" FontSize="20" Foreground="White" FontWeight="Bold" Margin="10 0 0 0"/>
+                </Border>
+                <Button Name="atcClose" Content="&#128473;" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="50" Height="50" FontSize="20" Background="Maroon" Foreground="White" BorderThickness="0" Grid.Row="0"/>
+                <local:AddToCart x:Name="atc" Width="824" Height="403" Grid.Row="1"/>
+            </Grid>
+        </Popup>
+    </Grid>
+</UserControl>

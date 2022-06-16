@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="Esca.SystemHelp"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Esca"
+             mc:Ignorable="d" 
+             d:DesignHeight="528" d:DesignWidth="824">
+    <Grid Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="90"/>
+            <RowDefinition Height="130"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+        <Label Name="Title" Content="WAITER" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Meiryo UI" FontSize="32" Grid.Row="1"/>
+        <TextBlock Name="Description" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Tap to call wait staff for questions, refills, etc." 
+                   VerticalAlignment="Top" FontFamily="Meiryo UI" FontSize="23" Grid.Row="2"/>
+        <Grid Grid.Row="3" Name="ArrowBtnRow">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="350"/>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button Name="LeftArrow" Content="&#129092;" HorizontalAlignment="Right" Margin="0,0,-33,0" VerticalAlignment="Center" Width="75" FontSize="70" Foreground="Gray" Grid.Column="0" Background="White" BorderThickness="0" IsEnabled="False" Click="LeftArrow_Click"/>
+            <Button Name="RightArrow" Content="&#129094;" HorizontalAlignment="Left" Margin="0,0,-30,0" VerticalAlignment="Center" Width="75" FontSize="70" Foreground="Maroon" Background="White" BorderThickness="0" Grid.Column="2" Click="RightArrow_Click"/>
+        </Grid>
+        <Label Name="PageNumber" Content="Page 1 of 9" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Meiryo UI" FontSize="23" Foreground="Gray" Grid.Row="5"/>
+    </Grid>
+</UserControl>

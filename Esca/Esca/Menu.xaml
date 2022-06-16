@@ -1,0 +1,47 @@
+﻿<UserControl x:Class="Esca.Menu"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Esca"
+             mc:Ignorable="d" 
+             d:DesignHeight="603" d:DesignWidth="1024">
+    <Grid HorizontalAlignment="Center" Height="603" VerticalAlignment="Top" Width="1024">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75" />
+            <RowDefinition Height="528" />
+        </Grid.RowDefinitions>
+        <Grid x:Name="container" Grid.Row="0" Height="75" Width="1024" HorizontalAlignment="Center">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="64"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+                <ColumnDefinition Width="240"/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="1" Name="AppetizerButton" Grid.Row="0" Content="APPETIZERS" Height="75" Width="240" FontFamily="Meiryo UI" FontSize="20" Background="Black" Foreground="White" FontWeight="Bold" Click="Appetizers_Click"/>
+            <Button Grid.Column="2" Name="MealButton" Grid.Row="0" Content="MEALS" Height="75" Width="240" FontFamily="Meiryo UI" FontSize="20" Background="Black" Foreground="White" FontWeight="Bold" Click="Meals_Click"/>
+            <Button Grid.Column="3" Name="DrinkButton" Grid.Row="0" Content="DRINKS" Height="75" Width="240" FontFamily="Meiryo UI" FontSize="20" Background="Black" Foreground="White" FontWeight="Bold" Click="Drinks_Click"/>
+            <Button Grid.Column="4" Name="DessertButton" Grid.Row="0" Content="DESSERTS" Height="75" Width="240" FontFamily="Meiryo UI" FontSize="20" Background="Black" Foreground="White" FontWeight="Bold" Click="Desserts_Click"/>
+            <ToggleButton Grid.Column="0" Name="FilterButton" Grid.Row="0" Height="75" Width="64" FontFamily="Meiryo UI" FontSize="14" Background="Maroon" Foreground="White" FontWeight="Bold" Click="Filter_Click">
+                <StackPanel>
+                    <TextBlock HorizontalAlignment="Center">Filter</TextBlock>
+                    <Popup Name="FilterPopup" HorizontalOffset="350" VerticalOffset="110" PlacementTarget="{Binding ElementName=FilterButton}" IsOpen="{Binding IsChecked, ElementName=FilterButton, Mode=TwoWay}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Border Grid.Row="0" VerticalAlignment="Top" Height="40" Padding="5" Background="Black" >
+                                <Label Content="Filter Menu" HorizontalAlignment="Left" VerticalAlignment="Center"  FontFamily="Meiryo UI" FontSize="20" Foreground="White"/>
+                            </Border>
+                            <Button Name="FilterClose" Content="&#128473;" HorizontalAlignment="Right" VerticalAlignment="Top" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Width="40" Height="40" FontSize="20" Background="Maroon" Foreground="White" BorderThickness="0" Grid.Row="0"/>
+                            <local:Filter x:Name="filterPop" Width="320" Height="230" Grid.Row="1"/>
+                        </Grid>
+                    </Popup>
+                </StackPanel>
+            </ToggleButton>
+        </Grid>
+        <Grid Name="menuUserControls" Grid.Row="1" Height="528"/>
+    </Grid>
+</UserControl>

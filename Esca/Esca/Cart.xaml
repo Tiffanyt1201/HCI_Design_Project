@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="Esca.Cart"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Esca"
+             mc:Ignorable="d"
+             d:DesignHeight="603" d:DesignWidth="1024">
+    <Grid ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="150" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="150" />
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="75*" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Grid.ColumnSpan="2">
+            <Grid Height="60" Width="1024" RenderTransformOrigin="0,0" Background="Maroon">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="0.75*"/>
+                    <ColumnDefinition Width="1.25*"/>
+                    <ColumnDefinition Width="0.40*"/>
+                </Grid.ColumnDefinitions>
+                <Label Content="Item Name" HorizontalAlignment="Left" Margin="40,10,0,0" VerticalAlignment="Top" RenderTransformOrigin="-2.6,0.3" Foreground="White" FontWeight="Bold" FontSize="16"/>
+                <Label Content="Price" Grid.Column="1" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
+                <Label Content="Guest Name" Grid.Column="2" HorizontalAlignment="Left" Margin="20,10,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
+            </Grid>
+        </Grid>
+        <ListBox Name="Cart1List" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False" Margin="0,0,0,20" Grid.Row="1">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Height="70" Width="1024" Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="472*"/>
+                                <ColumnDefinition Width="59*"/>
+                                <ColumnDefinition Width="379*"/>
+                                <ColumnDefinition Width="114*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="{Binding Price}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="16" Height="32" Width="52"/>
+                            <Label Content="{Binding Name}" Grid.Column="0" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontSize="14" Height="29" Width="250"/>
+                            <Label Content="{Binding Instruction}" Grid.Column="0" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" Foreground="Black"  FontSize="11" Height="25" Width="250"/>
+                            <Button Content="X" BorderThickness="0" Grid.Column="3" HorizontalAlignment="Left" Margin="28,0,0,0" VerticalAlignment="Center" Width="35" Height="34" Background="White" Foreground="Black" FontWeight="Bold" FontSize="20"/>
+                            <ComboBox Grid.Column="2" Margin="121,20,91,0" VerticalAlignment="Top" Foreground="Maroon" FontWeight="Bold" FontSize="16" SelectedIndex="1" Background="White" Height="27">
+                                <ComboBoxItem>Ivan Sancar</ComboBoxItem>
+                                <ComboBoxItem>Amy Stevenson</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row ="2"  Height="40" Width="1024" Background="Maroon">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition Width="0.75*"/>
+                <ColumnDefinition Width="1.25*"/>
+                <ColumnDefinition Width="0.40*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="AmyAmount" Content="20.98" Grid.Column="1" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="16"/>
+            <Label Name="AmyTotal" Content="Total" Grid.Column="0" HorizontalAlignment="Left" Margin="20,5,0,0" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" FontSize="14"/>
+            <Label Name="AmyGuest" Content="Amy Stevenson" Grid.Column="2" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        </Grid>
+        <ListBox Name="Cart2List" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.CanContentScroll="False" Margin="0,0,0,20" Grid.Row="3">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="70"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0" Height="70" Width="1024" Background="White">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="472*"/>
+                                <ColumnDefinition Width="59*"/>
+                                <ColumnDefinition Width="379*"/>
+                                <ColumnDefinition Width="114*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Content="{Binding Price}" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Black" FontWeight="Bold" FontSize="16" Height="32" Width="52"/>
+                            <Label Content="{Binding Name}" Grid.Column="0" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Top" Foreground="Black" FontWeight="Bold" FontSize="14" Height="29" Width="250"/>
+                            <Label Content="{Binding Instruction}" Grid.Column="0" HorizontalAlignment="Left" Margin="20,30,0,0" VerticalAlignment="Top" Foreground="Black"  FontSize="11" Height="25" Width="176"/>
+                            <Button Content="X" Click="DeleteItemButton_Click" BorderThickness="0" Grid.Column="3" HorizontalAlignment="Left" Margin="28,0,0,0" VerticalAlignment="Center" Width="35" Height="34" Background="White" Foreground="Black" FontWeight="Bold" FontSize="20"/>
+                            <ComboBox Grid.Column="2" Margin="121,20,91,0" VerticalAlignment="Top" Foreground="Maroon" FontWeight="Bold" FontSize="16" SelectedIndex="1" Background="White" Height="27">
+                                <ComboBoxItem>Amy Stevenson</ComboBoxItem>
+                                <ComboBoxItem>Ivan Sancar</ComboBoxItem>
+                            </ComboBox>
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <Grid Grid.Row ="4" Height="40" Width="1024" Background="Maroon">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="366*"/>
+                <ColumnDefinition Width="100*"/>
+                <ColumnDefinition Width="175*"/>
+                <ColumnDefinition Width="291*"/>
+                <ColumnDefinition Width="93*"/>
+            </Grid.ColumnDefinitions>
+            <Label Name="IvanAmount" Content="42.96" Grid.Column="2" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="16"/>
+            <Label Name="IvanTotal" Content="Total" Grid.Column="0" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"/>
+            <Label Name="IvanGuest" Content="Ivan Sancar" Grid.Column="3" HorizontalAlignment="Left" Margin="20,0,0,0" VerticalAlignment="Center" Foreground="White" FontWeight="Bold" FontSize="14"/>
+        </Grid>
+        <Grid Grid.Row="5" Background="Black" Grid.ColumnSpan="2">
+            <Button Name="ConfirmButton" Height="50" Content="Confirm Changes" HorizontalAlignment="Right" Margin="0,10,250,0" VerticalAlignment="Top" Width="150" Background="Maroon" Foreground="White" FontWeight="Bold" FontSize="16" Grid.Column="1" Click="ConfirmButton_Click"/>
+            <Button Name="OrderButton" Height="50" Content="Place Order" HorizontalAlignment="Right" Margin="0,10,50,0" VerticalAlignment="Top" Width="150" Background="Maroon" Foreground="White" FontWeight="Bold" FontSize="16" Grid.Column="1" Click="OrderButton_Click"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,75 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="pictures\appetizers\guacamole-2.jpg" />
+    <None Remove="pictures\appetizers\guacamole-3.jpg" />
+    <None Remove="pictures\desserts\salted-caramel-cheesecake-2.jpg" />
+    <None Remove="pictures\drinks\lemonade-2.jpg" />
+    <None Remove="pictures\drinks\lemonade-2.png" />
+    <None Remove="pictures\meals\crispy-chicken-sandwich-2.jpg" />
+    <None Remove="pictures\meals\crispy-chicken-sandwich-3.jpg" />
+    <None Remove="pictures\meals\power-bowl-2.jpg" />
+    <None Remove="pictures\meals\power-bowl-3.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<Resource Include="pictures/desserts/key-lime-pie-1.jpg" />
+	<Resource Include="pictures/desserts/apple-tart-1.jpg" />
+	<Resource Include="pictures/desserts/chocolate-peanut-butter-crunchbar-1.jpg" />
+	<Resource Include="pictures/desserts/salted-caramel-cheesecake-1.jpg" />
+	<Resource Include="pictures/desserts/white-chocolate-brownie-1.jpg" />
+	<Resource Include="pictures/desserts/mini-jelly-donuts-1.jpg" />
+	<Resource Include="pictures/top-menu/menu.png" />
+	<Resource Include="pictures/top-menu/clock.png" />
+	<Resource Include="pictures/top-menu/pay.png" />
+	<Resource Include="pictures/top-menu/shopping-cart.png" />
+	<Resource Include="pictures/top-menu/question-mark.png" />
+	<Resource Include="pictures/top-menu/bell.png" />
+    <Resource Include="pictures/meals/lemon-basil-salmon-1.jpg" />
+    <Resource Include="pictures/meals/chicken-madeira-rigatoni-1.jpg" />
+    <Resource Include="pictures/meals/fettuccine-alfredo-1.jpg" />
+    <Resource Include="pictures/meals/vegan-tacos-1.jpg" />
+    <Resource Include="pictures/meals/power-bowl-1.jpg" />
+    <Resource Include="pictures/meals/mushroom-sirloin-1.jpg" />
+    <Resource Include="pictures/meals/crispy-chicken-sandwich-1.jpg" />
+    <Resource Include="pictures/meals/chimichurri-steak-salad-1.jpeg" />
+    <Resource Include="pictures/meals/beyond-meat-burger-1.jpg" />
+	<Resource Include="pictures/drinks/carribean-sunrise-smoothie-1.jpg" />
+	<Resource Include="pictures/drinks/coca-cola-1.jpg" />
+	<Resource Include="pictures/drinks/fiji-water-1.jpg" />
+	<Resource Include="pictures/drinks/iced-tea-1.jpeg" />
+	<Resource Include="pictures/drinks/lemonade-1.jpg" />
+	<Resource Include="pictures/drinks/diet-coca-cola-1.jpg" />
+	<Resource Include="pictures/appetizers/cashew-chicken-1.jpeg" />
+	<Resource Include="pictures/appetizers/chicken-wings-1.jpeg" />
+	<Resource Include="pictures/appetizers/tuna-poke-1.jpeg" />
+	<Resource Include="pictures/appetizers/roasted-tomatoes-1.jpg" />
+	<Resource Include="pictures/appetizers/guacamole-1.jpg" />
+	<Resource Include="pictures/appetizers/dry-ribs-1.jpg" />
+	<Resource Include="pictures/appetizers/calamari-1.jpeg" />
+	<Resource Include="pictures/appetizers/nachos-1.jpg" />
+	<Resource Include="pictures\appetizers\guacamole-2.jpg" />
+	<Resource Include="pictures\appetizers\guacamole-3.jpg" />
+	<Resource Include="pictures\desserts\salted-caramel-cheesecake-2.jpg" />
+	<Resource Include="pictures\drinks\lemonade-2.png" />
+	<Resource Include="pictures\meals\crispy-chicken-sandwich-2.jpg" />
+	<Resource Include="pictures\meals\crispy-chicken-sandwich-3.jpg" />
+	<Resource Include="pictures\meals\power-bowl-2.jpg" />
+	<Resource Include="pictures\meals\power-bowl-3.jpg" />
+  </ItemGroup>
+
+</Project>

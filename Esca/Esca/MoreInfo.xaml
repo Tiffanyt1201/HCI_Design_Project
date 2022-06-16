@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="Esca.MoreInfo"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Esca"
+             mc:Ignorable="d" 
+             d:DesignHeight="418" d:DesignWidth="950">
+    <Grid Background="{DynamicResource {x:Static SystemColors.ControlLightLightBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <!--<ColumnDefinition Width="20" />-->
+            <ColumnDefinition Width="auto" />
+            <ColumnDefinition Width="*" />
+            <!--<ColumnDefinition Width="20" />-->
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="20" />
+        </Grid.RowDefinitions>
+        <!--<StackPanel Grid.Row="1" Grid.Column="1" Background="Black" Height="20"></StackPanel>-->
+        <!--<Grid Grid.Row="1" Grid.Column="1" Height="65" Background="Black" Width="984">
+            <TextBlock Grid.Row="1" Grid.Column="1" Foreground="White" FontSize="30" Padding="10" FontWeight="Bold" HorizontalAlignment="Left">Fettuccine Alfredo</TextBlock>
+            <Button Content="&#x2716;" Grid.Column="2" Grid.Row="1" HorizontalAlignment="Right" Margin="0 0 20 0" FontSize="30" FontWeight="SemiBold" Background="Black" Foreground="White" BorderThickness="0" Click="Button_Click"></Button>
+        </Grid>-->
+        <ScrollViewer Grid.Row="2" Grid.Column="1" Width="950" Height="378" VerticalScrollBarVisibility="Auto">
+            <StackPanel Orientation="Horizontal" Margin="20 0 5 0">
+                <StackPanel Orientation="Vertical" Width="500">
+                    <TextBlock FontSize="20" Margin="0,0,10,0" FontWeight="Bold" Padding="25 10 10 10">Description:</TextBlock>
+                    <TextBlock x:Name="description" Margin="25,0,0,0" FontSize="20" TextWrapping="Wrap" MaxWidth="475">
+                            <!--Pan roasted chicken, asiago cream and chives on noodles served with garlic baguette-->
+                    </TextBlock>
+                    <Expander Grid.Row="3" Grid.Column="1" Padding="10" FontSize="20" IsExpanded="True" Margin="-10 0 0 0">
+                        <Expander.Header>
+                            <TextBlock FontWeight="Bold" >
+                                Ingredients:
+                            </TextBlock>
+                        </Expander.Header>
+                        <TextBlock x:Name="ingredients" Margin="25,0,0,0" FontSize="20" TextWrapping="Wrap">
+                            <!--1 lb Fettuccine Pasta <LineBreak/>
+                            6 Tablespoons Butter <LineBreak/>
+                            1 Garlic Clove (minced) <LineBreak/>
+                            1/4 teaspoon Salt <LineBreak/>
+                            1 1/4 cup Shredded Parmesan Cheese <LineBreak/>
+                            1/4 teaspoon Pepper <LineBreak/>
+                            2 Tablespoons Italian Parsley-->
+                        </TextBlock>
+                    </Expander>
+
+                    <Expander Padding="10" FontSize="20" HorizontalAlignment="Left" IsExpanded="True" Margin="-10 0 0 0">
+                        <Expander.Header>
+                            <TextBlock FontWeight="Bold" >
+                                Nutritions (per serving):
+                            </TextBlock>
+                        </Expander.Header>
+                        <TextBlock x:Name="nutrition" Margin="25, 0, 0, 5" FontSize="20" TextWrapping="Wrap">
+                            <!--Calories: 300 <LineBreak />
+                            Total Fat: 6g <LineBreak/>
+                            Total Carb: 31g <LineBreak/>
+                            Protein: 20g <LineBreak/>
+                            Sodium: 480mg-->
+                        </TextBlock>
+                    </Expander>
+                </StackPanel>
+                <StackPanel x:Name="imgPanel" Orientation="Vertical" MaxWidth="464" Margin="5">
+                    <Image Source="chicken-fettuccine-alfredo-1.jpg" Stretch="UniformToFill"/>
+                    <Image Source="chicken-fettuccine-alfredo-2.jpg" Stretch="UniformToFill"/>
+                    <Image Source="chicken-fettucine-alfredo-3.jpg" Stretch="UniformToFill"/>
+                </StackPanel>
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel Grid.Row="3" Grid.Column="1" Background="Black" Height="20"></StackPanel>
+    </Grid>
+</UserControl>

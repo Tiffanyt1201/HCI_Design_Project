@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ShowAllFiles>true</ShowAllFiles>
+  </PropertyGroup>
+  <ItemGroup>
+    <ApplicationDefinition Update="App.xaml">
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="AddToCart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Appetizers.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Cart.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Desserts.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Drinks.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="History.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Meals.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Menu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MoreInfo.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="AddToCart.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Appetizers.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Cart.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Desserts.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Drinks.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Filter.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="History.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MainWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Meals.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Menu.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MoreInfo.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+</Project>
